@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent) :
             this, &MainWindow::onHolaClicked);
     bonjourConnection = connect(ui->bonjourButton, &QPushButton::clicked,
             [this](){ui->plainTextEdit->appendPlainText(QString("Bonjour!"));});
+    connect(ui->bonjourButton, &QPushButton::clicked, ui->helloButton, &QPushButton::clicked);
 }
 
 MainWindow::~MainWindow()
